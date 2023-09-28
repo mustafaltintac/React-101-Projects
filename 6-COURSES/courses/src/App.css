@@ -1,0 +1,30 @@
+.courseMainDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.cardDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 30px;
+  color: red;
+}
+
+.cardDeleteBtn {
+  width: 100px;
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  background-color: purple;
+  color: white;
+  cursor: pointer;
+}

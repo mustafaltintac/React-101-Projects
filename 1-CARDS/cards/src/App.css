@@ -1,0 +1,10 @@
+.title{
+  text-align: center;
+}
+.resim{
+  max-height: 100px;
+  min-width: 200px;
+}
+.card{
+  background-color: rgb(103, 105, 105);
+} 
