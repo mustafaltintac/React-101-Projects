@@ -1,0 +1,12 @@
+
+.navHome{
+    text-decoration: none;
+    color: #fbfbfb;
+    padding: 10px;
+    margin-right: 20px;
+    background-color: skyblue;
+}
+.navHome a{
+    color:#fbfbfb;
+    text-decoration: none;
+}
