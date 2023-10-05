@@ -1,0 +1,65 @@
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+.App{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+form{
+    width: 500px;
+
+}
+
+.inputDiv{
+margin-bottom: 10px ;
+}
+
+input,select{
+    width: 100%;
+    padding: 10px;
+    border: 3px solid #4a5568;
+    font-size: 16px;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    background-color: #2d3748;
+    margin: 5px 0px;
+}
+
+input::placeholder{
+    color:lightgrey
+}
+
+input:focus{
+border-color: lightblue;
+}
+
+button{
+    padding: 10px;
+    width: 100%;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+    
+}
+.input-error{
+    border-color: pink;
+}
+.error{
+    font-size: 12px;
+    color: pink;
+}
+.checkBox input{
+    width: auto;
+}
+.link {
+    margin-top: 10px;
+    color: white;
+}
