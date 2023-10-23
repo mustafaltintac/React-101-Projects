@@ -37,8 +37,6 @@ export default function PortalForm() {
               <option value="itü"> İtü </option>
               <option value="odtü">Odtü</option>
               <option value="ktü">Ktü </option>
-
-
             </CustomSelect>
             <CustomCheckBox type="checkbox" name="isAccepted"/>
             <button disabled={isSubmitting} type="submit">Kaydet</button>

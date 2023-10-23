@@ -3,8 +3,8 @@ import { useFormik } from "formik";
 import { basicSchema } from "../schemas/index";
 import { Link } from "react-router-dom";
 
-const onSubmit = async (values,action) => {
-  await new Promise((resolve)=>{
+const onSubmit =  (values,action) => {
+   new Promise((resolve)=>{
     setTimeout(resolve,1000)
 
   })
@@ -12,6 +12,7 @@ const onSubmit = async (values,action) => {
 };
 
 export default function GeneralForm() {
+  
   const { values, errors,isSubmitting ,handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: "",

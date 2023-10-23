@@ -1,0 +1,37 @@
+{
+  "myBooks": [
+    {
+      "author": "Unknown",
+      "country": "Sumer and Akkadian Empire",
+      "imageLink": "",
+      "language": "Akkadiannnn",
+      "bookLink": "https://en.wikipedia.org/wiki/Divine_Comedy\n",
+      "pages": 160,
+      "title": "The Epic Of Gilgameshhhhhhhhhh",
+      "year": "-17000",
+      "id": 1
+    },
+    {
+      "author": "Unknown",
+      "country": "Achaemenid Empire",
+      "imageLink": "",
+      "language": "Hebrewwwwwww",
+      "bookLink": "https://en.wikipedia.org/wiki/Book_of_Job\n",
+      "pages": 176,
+      "title": "The Book Of Job",
+      "year": "-6000000000000000",
+      "id": 2
+    },
+    {
+      "author": "Giovanni Boccaccio",
+      "country": "Italy",
+      "imageLink": "",
+      "language": "Italian",
+      "bookLink": "https://en.wikipedia.org/wiki/The_Decameron\n",
+      "pages": 1024,
+      "title": "The Decameron",
+      "year": 1351,
+      "id": 3
+    }
+  ]
+}
