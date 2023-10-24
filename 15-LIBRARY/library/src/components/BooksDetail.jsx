@@ -37,7 +37,7 @@ function BooksDetail() {
     setLanguage(foundBooks[0].language);
     setPages(foundBooks[0].pages);
     setYear(foundBooks[0].year);
-    setBookLink(foundBooks[0].link);
+    setBookLink(foundBooks[0].bookLink);
   } else {
     setAuthor("");
     setCountry("");

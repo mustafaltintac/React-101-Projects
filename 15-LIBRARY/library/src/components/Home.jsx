@@ -2,34 +2,32 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { MainContext } from "../contex";
 import { useContext } from "react";
+import "./Books.css";
+import { orange } from "@mui/material/colors";
 
 function Home() {
+  const { isLogin } = useContext(MainContext);
 
-   const  {isLogin}= useContext(MainContext)
-
-
-
-  
-    
-  return (isLogin === "true"  || isLogin ===true) ? (
-    <Grid
-      container
-      margin={10}
-      alignItems={"center"}
-      justifyContent={"center"}
-      color={"black"}
-      borderColor={"red"}
-    >
-      <Grid item xs={12} md={6}>
+  return isLogin === "true" || isLogin === true ? (
+    <Grid className="notLoginHome" container >
+      <Grid
+        item
+        xs={12}
+        md={6}
+        sx={{
+          textAlign:"center",
+          color: "black",
+          fontSize: 40,
+        }}
+      >
         Emlak Katılım Bankasına Hoş geldiniz,Artık kitap ekleyip
-        çıkartabilirsiniz {isLogin} {typeof(isLogin)}
+        çıkartabilirsiniz
       </Grid>
-      <Grid>
-
-      </Grid>
+      <Grid></Grid>
     </Grid>
   ) : (
     <Grid
+      className="LoginHome"
       container
       margin={10}
       alignItems={"center"}
@@ -38,12 +36,12 @@ function Home() {
       borderColor={"red"}
     >
       <Grid item xs={12} md={6}>
-        <p>
-          Merhaba Kitap Dostları! Amlak
-          Katılım Bankası Kütüphanesi'ne hoş geldiniz! Burada zengin kitap
-          koleksiyonumuz ve çeşitli etkinliklerle bilgi dünyasında keyifli bir
-          yolculuğa çıkabilirsiniz. Sizi bekliyoruz! Sevgi ve Kitap Dolu Günler
-          dileriz, Amlak Katılım Bankası Kütüphanesi Ekibi {isLogin} {typeof(isLogin)}
+        <p style={{ backgroundColor: "white" }}>
+          Merhaba Kitap Dostları! Amlak Katılım Bankası Kütüphanesi'ne hoş
+          geldiniz! Burada zengin kitap koleksiyonumuz ve çeşitli etkinliklerle
+          bilgi dünyasında keyifli bir yolculuğa çıkabilirsiniz. Sizi
+          bekliyoruz! Sevgi ve Kitap Dolu Günler dileriz, Amlak Katılım Bankası
+          Kütüphanesi Ekibi {isLogin} {typeof isLogin}
         </p>
         <div
           style={{

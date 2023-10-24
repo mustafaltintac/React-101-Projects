@@ -6,14 +6,19 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { BooksContex } from "../BooksContex";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 export default function FormDialog() {
   const [open, setOpen] = useState(false);
-  const [idLibrary, setIdLibrary]=useState()
   const {
     title,
-    books,
+    author,
+    bookLink,
+    country,
+    pages,
+    year,
+    imageLink,
+    language,
     setAuthor,
     setCountry,
     setImageLink,
@@ -22,7 +27,13 @@ export default function FormDialog() {
     setPages,
     setTitle,
     setYear,
-    Library
+    idLibrary,
+    idBooks,
+    setIsLoad,
+    isLoad,
+    handleSelect
+    
+    
   } = useContext(BooksContex);
 
   const [upTitle, setUpTitle] = useState();
@@ -33,17 +44,8 @@ export default function FormDialog() {
   const [upPages, setUpPages] = useState();
   const [upYear, setUpYear] = useState();
   const [upImageLink, setUpImageLink] = useState();
-  const [id,setId]=useState()
-
 
   const handleClickOpen = () => {
-    const editBook = books.find((book) => book.title === title);
-    const {author,bookLink,country,pages,year, id,imageLink,language } = editBook;
-
-    const idd=Library.findIndex((book)=>book.title===title)
-    setIdLibrary(idd)
-    
-
     setUpTitle(title);
     setUpAuthor(author);
     setUpCountry(country);
@@ -52,26 +54,25 @@ export default function FormDialog() {
     setUpBookLink(bookLink);
     setUpPages(pages);
     setUpYear(year);
-    setId(id)
+    handleSelect(title)
     setOpen(true);
   };
 
-
-
-
-
   const handleCloseComplate = () => {
-    setAuthor(upAuthor)
+    setAuthor(upAuthor);
     handleEdit(), 
     setOpen(false);
+    setIsLoad(!isLoad)
+
+
   };
 
   const handleClose = () => {
     setOpen(false);
   };
 
-
   const handleEdit = () => {
+
     const updateBook = {
       title: upTitle,
       author: upAuthor,
@@ -83,10 +84,8 @@ export default function FormDialog() {
       year: upYear,
     };
 
-
-
     axios
-      .patch(`http://localhost:3000/myBooks/${id}`, updateBook)
+      .patch(`http://localhost:3000/myBooks/${idBooks}`, updateBook)
       .then((response) => {
         console.log("Veri Güncelleme Başarılı:", response.data);
         setTitle(upTitle);
@@ -102,10 +101,13 @@ export default function FormDialog() {
         console.error("Veri Güncelleme Hatası:", error);
       });
 
-      axios
+    axios
       .patch(`http://localhost:3001/Library/${idLibrary}`, updateBook)
       .then((response) => {
-        console.log("Veri Güncelleme Başarılıııııııııııııııııııııııııııııı:", response.data);
+        console.log(
+          "Veri Güncelleme Başarılıııııııııııııııııııııııııııııı:",
+          response.data
+        );
         setTitle(upTitle);
         setAuthor(upAuthor);
         setCountry(upCountry);
@@ -120,9 +122,6 @@ export default function FormDialog() {
       });
     setOpen(false);
   };
-
-
-
 
   return (
     <div>
@@ -182,7 +181,7 @@ export default function FormDialog() {
           <TextField
             autoFocus
             margin="dense"
-            id="link"
+            id="bookLink"
             label="Kitap Linki"
             value={upBookLink}
             type="text"
@@ -193,7 +192,7 @@ export default function FormDialog() {
           <TextField
             autoFocus
             margin="dense"
-            id="link"
+            id="bookLink"
             label="Kitap Resmi Linki"
             value={upImageLink}
             type="text"
@@ -229,7 +228,6 @@ export default function FormDialog() {
           <Button onClick={handleCloseComplate}>Güncelle</Button>
         </DialogActions>
       </Dialog>
-      
     </div>
   );
 }

@@ -10,12 +10,25 @@ import EditBook from "./BooksCrud/EditBook";
 import BooksDetail from "./BooksDetail";
 import BooksMedia from "./BooksMedia";
 import AddBook from "./BooksCrud/AddBook";
+import { MainContext } from '../contex' 
 
 function GenelBooks() {
   const { Library, handlePost } = useContext(BooksContex);
+  const  {isLogin}= useContext(MainContext)
 
-
-  return (
+  return   isLogin == "false"  ? (
+    <h2
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 100,
+      }}
+    >
+      Lütfen Giriş Yapınız
+    </h2>
+  ) : (
     <Box
       spacing={15}
       sx={{

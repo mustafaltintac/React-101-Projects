@@ -8,12 +8,17 @@ import {Stack} from "@mui/material"
 import BooksDetail from './BooksDetail'
 import BooksMedia from './BooksMedia'
 import EditBooks from "./BooksCrud/EditBook"
+import { MainContext } from '../contex' 
 
 function CustomBooks() {
 
-    const {books,deleteBook} = useContext(BooksContex)
+  const {books,deleteBook} = useContext(BooksContex)
+  const  {isLogin}= useContext(MainContext)
 
+  console.log(isLogin)
   return (
+    isLogin == "false" ?
+    <h2 style={{display:'flex',flexDirection:"column",alignItems:'center',justifyContent:"center",marginTop:100}}>Lütfen Giriş Yapınız</h2>:
     <Box
     spacing={15}
     sx={{
