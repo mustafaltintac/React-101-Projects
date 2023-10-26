@@ -1,0 +1,87 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: rgb(238, 61, 30);
+}
+.Board{
+    display: flex;
+    width: 100%;
+
+}
+.Column{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid; 
+    border-color: black ;
+    border-radius: 4px;
+    align-items: center;
+    width: 50%;
+    margin: 5px;
+    background-color: lightgrey;
+}
+
+.Board  .Column:nth-child(2) .Header{
+    background-color: rgb(93, 230, 93);
+    color: rgb(255, 252, 252);
+}
+.Board  .Column:nth-child(2) .TaskList{
+    background-color: rgb(93, 230, 93);
+    color: rgb(255, 252, 252);
+    border-color: black;
+
+}
+.Board  .Column:nth-child(2) .Task{
+    color: rgb(255, 252, 252);
+    text-decoration: line-through;
+}
+
+.Header{
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    font-size: 20px;
+    background-color: rgb(89, 208, 230);
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    border-radius: 3px;
+}
+.Title{
+    background-color: lightblue;
+    position: sticky;
+}
+.Field{
+    width: 95%;
+}
+.Board  .Column:nth-child(2) .Field{
+    color: rgb(255, 252, 252);
+    text-decoration: line-through;
+    height: 100%;
+}
+.Task{
+    min-width: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 3;
+    text-align: center;
+
+
+}
+.TaskList{
+    padding: 3px;
+    border: 2px solid ;
+    margin: 3px;
+    border-radius: 5px;
+    background-color: rgb(89, 208, 230);
+    
+    transition: background-color 0.2s ease;
+    /* background-color: #f4f5f7; */
+    flex-grow: 1;
+
+}
+
+
